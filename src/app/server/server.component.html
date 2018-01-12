@@ -1,3 +1,30 @@
-<div class="row">
-  inside server directive
+<div class="container">
+  <div class="row">
+    <!-- <div>
+        <input type="text" class="form-control" (input)="onUpdateSeverName($event)"/>
+        <p>{{serverNameEnterted}}</p>
+
+        //above one is one way binding
+        </div> -->
+
+    <div>
+      <input type="text" class="form-control" [(ngModel)]="serverNameEnterted">
+      <p>{{serverNameEnterted}}</p>
+    </div>
+    <div>
+      <button class="btn btn-primary" [disabled]="allowServerButton" (click)="onSeverCreate()">Add me </button>
+      <p [innerText]="allowServerButton"></p>
+      <!-- this is called property binding  -->
+    </div>
+    <p>The server with id {{serverId}} and their status :{{getStatusOfServer()}}</p>
+  </div>
+  <div class="assignment2">
+    <p>
+      <input type="text" class="form-control" [(ngModel)]="username">
+    </p>
+    <p>UserName Entered : {{username}}</p>
+    <p><button type="submit" class="btn btn-primary"
+      [disabled]="!username" (click)="onResetIt()">Reset It!!</button></p>
+  </div>
+
 </div>
